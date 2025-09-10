@@ -71,7 +71,7 @@ const BaoCaoKhoa: React.FC = () => {
       {/* Header */}
       <div className="bg-white rounded-lg shadow-md p-6">
         <h1 className="text-3xl font-bold text-gray-800 mb-2">
-          📊 Báo cáo theo Khoa
+          Báo cáo theo Khoa
         </h1>
         <p className="text-gray-600">
           Thống kê chi tiết tiến độ hoàn thành Quiz của học sinh theo từng Khoa
@@ -104,7 +104,7 @@ const BaoCaoKhoa: React.FC = () => {
         <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
           <div className="flex items-center">
             <div className="p-3 bg-blue-100 rounded-full flex-shrink-0">
-              <span className="text-2xl">👥</span>
+              <div className="w-6 h-6 bg-blue-500 rounded"></div>
             </div>
             <div className="ml-4 min-w-0">
               <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider">Tổng học sinh</h3>
@@ -116,7 +116,7 @@ const BaoCaoKhoa: React.FC = () => {
         <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
           <div className="flex items-center">
             <div className="p-3 bg-green-100 rounded-full flex-shrink-0">
-              <span className="text-2xl">✅</span>
+              <div className="w-6 h-6 bg-green-500 rounded"></div>
             </div>
             <div className="ml-4 min-w-0">
               <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider">Hoàn thành ≥80%</h3>
@@ -130,7 +130,7 @@ const BaoCaoKhoa: React.FC = () => {
         <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
           <div className="flex items-center">
             <div className="p-3 bg-yellow-100 rounded-full flex-shrink-0">
-              <span className="text-2xl">⏳</span>
+              <div className="w-6 h-6 bg-yellow-500 rounded"></div>
             </div>
             <div className="ml-4 min-w-0">
               <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider">Đang thực hiện</h3>
@@ -144,7 +144,7 @@ const BaoCaoKhoa: React.FC = () => {
         <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
           <div className="flex items-center">
             <div className="p-3 bg-red-100 rounded-full flex-shrink-0">
-              <span className="text-2xl">❌</span>
+              <div className="w-6 h-6 bg-red-500 rounded"></div>
             </div>
             <div className="ml-4 min-w-0">
               <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider">Cần cải thiện</h3>

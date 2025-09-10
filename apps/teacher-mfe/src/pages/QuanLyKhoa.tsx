@@ -36,17 +36,17 @@ export default function QuanLyKhoa() {
       setTimeout(() => {
         // Mock departments data với đầy đủ 11 khoa/viện
         const mockDepartments: Department[] = [
-          { id: 1, name: 'Khoa Hàng hải', code: 'HH', color: 'bg-blue-500', students: 245 },
-          { id: 2, name: 'Khoa Máy tàu biển', code: 'MTB', color: 'bg-green-500', students: 198 },
-          { id: 3, name: 'Khoa Công trình', code: 'CT', color: 'bg-yellow-500', students: 167 },
-          { id: 4, name: 'Khoa Điện - Điện tử', code: 'DDT', color: 'bg-purple-500', students: 134 },
-          { id: 5, name: 'Khoa Kinh tế', code: 'KT', color: 'bg-red-500', students: 156 },
-          { id: 6, name: 'Khoa Quản trị - Tài chính', code: 'QTTC', color: 'bg-pink-500', students: 89 },
-          { id: 7, name: 'Khoa Công nghệ thông tin', code: 'CNTT', color: 'bg-indigo-500', students: 123 },
-          { id: 8, name: 'Khoa Đóng tàu', code: 'DT', color: 'bg-teal-500', students: 78 },
-          { id: 9, name: 'Khoa Ngoại ngữ', code: 'NN', color: 'bg-orange-500', students: 95 },
-          { id: 10, name: 'Viện Môi trường', code: 'VMT', color: 'bg-emerald-500', students: 112 },
-          { id: 11, name: 'Viện Đào tạo quốc tế', code: 'VDTQT', color: 'bg-violet-500', students: 87 }
+          { id: 1, name: 'Khoa Hàng hải', code: 'HH', color: 'bg-blue-300', students: 245 },
+          { id: 2, name: 'Khoa Máy tàu biển', code: 'MTB', color: 'bg-green-300', students: 198 },
+          { id: 3, name: 'Khoa Công trình', code: 'CT', color: 'bg-yellow-300', students: 167 },
+          { id: 4, name: 'Khoa Điện - Điện tử', code: 'DDT', color: 'bg-purple-300', students: 134 },
+          { id: 5, name: 'Khoa Kinh tế', code: 'KT', color: 'bg-red-300', students: 156 },
+          { id: 6, name: 'Khoa Quản trị - Tài chính', code: 'QTTC', color: 'bg-pink-300', students: 89 },
+          { id: 7, name: 'Khoa Công nghệ thông tin', code: 'CNTT', color: 'bg-indigo-300', students: 123 },
+          { id: 8, name: 'Khoa Đóng tàu', code: 'DT', color: 'bg-teal-300', students: 78 },
+          { id: 9, name: 'Khoa Ngoại ngữ', code: 'NN', color: 'bg-orange-300', students: 95 },
+          { id: 10, name: 'Viện Môi trường', code: 'VMT', color: 'bg-emerald-300', students: 112 },
+          { id: 11, name: 'Viện Đào tạo quốc tế', code: 'VDTQT', color: 'bg-violet-300', students: 87 }
         ];
 
         // Mock students data với nhiều học sinh hơn cho mỗi khoa
@@ -189,13 +189,13 @@ export default function QuanLyKhoa() {
 
       {/* Thống kê tổng quan */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div className="bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg p-6 text-white">
+        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-6 text-white shadow-lg">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-blue-100 text-sm">Tổng số khoa/viện</p>
               <p className="text-2xl font-bold">{departments.length}</p>
             </div>
-            <div className="bg-white bg-opacity-20 rounded-lg p-3">
+            <div className="bg-white bg-opacity-25 rounded-lg p-3">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
               </svg>
@@ -203,13 +203,13 @@ export default function QuanLyKhoa() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-lg p-6 text-white">
+        <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-lg p-6 text-white shadow-lg">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-green-100 text-sm">Tổng học sinh</p>
               <p className="text-2xl font-bold">{allStudents.length}</p>
             </div>
-            <div className="bg-white bg-opacity-20 rounded-lg p-3">
+            <div className="bg-white bg-opacity-25 rounded-lg p-3">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
               </svg>
@@ -217,13 +217,13 @@ export default function QuanLyKhoa() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-yellow-500 to-yellow-600 rounded-lg p-6 text-white">
+        <div className="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg p-6 text-white shadow-lg">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-yellow-100 text-sm">Đã làm bài</p>
               <p className="text-2xl font-bold">{allStudents.filter(s => s.completed).length}</p>
             </div>
-            <div className="bg-white bg-opacity-20 rounded-lg p-3">
+            <div className="bg-white bg-opacity-25 rounded-lg p-3">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
@@ -231,7 +231,7 @@ export default function QuanLyKhoa() {
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg p-6 text-white">
+        <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg p-6 text-white shadow-lg">
           <div className="flex items-center justify-between">
             <div>
               <p className="text-purple-100 text-sm">Điểm trung bình</p>
@@ -242,7 +242,7 @@ export default function QuanLyKhoa() {
                 }
               </p>
             </div>
-            <div className="bg-white bg-opacity-20 rounded-lg p-3">
+            <div className="bg-white bg-opacity-25 rounded-lg p-3">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
               </svg>
@@ -260,7 +260,7 @@ export default function QuanLyKhoa() {
             className={`
               relative cursor-pointer rounded-xl p-6 transition-all duration-300 hover:scale-105 hover:shadow-lg
               ${selectedDepartment === dept.id ? 'ring-4 ring-blue-500 shadow-lg' : 'hover:shadow-md'}
-              ${dept.color} text-white
+              ${dept.color} text-gray-800
             `}
           >
             <div className="flex items-center justify-between">
@@ -272,8 +272,8 @@ export default function QuanLyKhoa() {
                 </div>
               </div>
               <div className="text-right">
-                <div className="w-12 h-12 bg-white bg-opacity-20 rounded-lg flex items-center justify-center mb-2">
-                  <div className="w-6 h-6 bg-white rounded"></div>
+                <div className="w-12 h-12 bg-white bg-opacity-60 rounded-lg flex items-center justify-center mb-2">
+                  <div className="w-6 h-6 bg-gray-600 rounded"></div>
                 </div>
               </div>
             </div>
