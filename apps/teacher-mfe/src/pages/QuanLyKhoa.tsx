@@ -4,7 +4,6 @@ interface Department {
   id: number;
   name: string;
   code: string;
-  color: string;
   students: number;
 }
 
@@ -36,17 +35,17 @@ export default function QuanLyKhoa() {
       setTimeout(() => {
         // Mock departments data với đầy đủ 11 khoa/viện
         const mockDepartments: Department[] = [
-          { id: 1, name: 'Khoa Hàng hải', code: 'HH', color: 'bg-blue-300', students: 245 },
-          { id: 2, name: 'Khoa Máy tàu biển', code: 'MTB', color: 'bg-green-300', students: 198 },
-          { id: 3, name: 'Khoa Công trình', code: 'CT', color: 'bg-yellow-300', students: 167 },
-          { id: 4, name: 'Khoa Điện - Điện tử', code: 'DDT', color: 'bg-purple-300', students: 134 },
-          { id: 5, name: 'Khoa Kinh tế', code: 'KT', color: 'bg-red-300', students: 156 },
-          { id: 6, name: 'Khoa Quản trị - Tài chính', code: 'QTTC', color: 'bg-pink-300', students: 89 },
-          { id: 7, name: 'Khoa Công nghệ thông tin', code: 'CNTT', color: 'bg-indigo-300', students: 123 },
-          { id: 8, name: 'Khoa Đóng tàu', code: 'DT', color: 'bg-teal-300', students: 78 },
-          { id: 9, name: 'Khoa Ngoại ngữ', code: 'NN', color: 'bg-orange-300', students: 95 },
-          { id: 10, name: 'Viện Môi trường', code: 'VMT', color: 'bg-emerald-300', students: 112 },
-          { id: 11, name: 'Viện Đào tạo quốc tế', code: 'VDTQT', color: 'bg-violet-300', students: 87 }
+          { id: 1, name: 'Khoa Hàng hải', code: 'HH', students: 245 },
+          { id: 2, name: 'Khoa Máy tàu biển', code: 'MTB', students: 198 },
+          { id: 3, name: 'Khoa Công trình', code: 'CT', students: 167 },
+          { id: 4, name: 'Khoa Điện - Điện tử', code: 'DDT', students: 134 },
+          { id: 5, name: 'Khoa Kinh tế', code: 'KT', students: 156 },
+          { id: 6, name: 'Khoa Quản trị - Tài chính', code: 'QTTC', students: 89 },
+          { id: 7, name: 'Khoa Công nghệ thông tin', code: 'CNTT', students: 123 },
+          { id: 8, name: 'Khoa Đóng tàu', code: 'DT', students: 78 },
+          { id: 9, name: 'Khoa Ngoại ngữ', code: 'NN', students: 95 },
+          { id: 10, name: 'Viện Môi trường', code: 'VMT', students: 112 },
+          { id: 11, name: 'Viện Đào tạo quốc tế', code: 'VDTQT', students: 87 }
         ];
 
         // Mock students data với nhiều học sinh hơn cho mỗi khoa
@@ -147,7 +146,7 @@ export default function QuanLyKhoa() {
   // Loading state
   if (loading) {
     return (
-      <div className="max-w-7xl mx-auto p-6">
+      <div className="w-full max-w-7xl mx-auto space-y-6">
         <div className="flex items-center justify-center h-64">
           <div className="text-center">
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto mb-4"></div>
@@ -161,7 +160,7 @@ export default function QuanLyKhoa() {
   // Error state
   if (error) {
     return (
-      <div className="max-w-7xl mx-auto p-6">
+      <div className="w-full max-w-7xl mx-auto space-y-6">
         <div className="bg-red-50 border border-red-200 rounded-lg p-6">
           <div className="flex items-center">
             <div className="flex-shrink-0">
@@ -180,121 +179,134 @@ export default function QuanLyKhoa() {
   }
 
   return (
-    <div className="max-w-7xl mx-auto p-6">
+    <div className="w-full max-w-7xl mx-auto space-y-6">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 mb-2">Quản lý Khoa</h1>
+      <div className="bg-white rounded-lg shadow-md p-6">
+        <h1 className="text-3xl font-bold text-gray-800 mb-2">Quản lý Khoa</h1>
         <p className="text-gray-600">Xem và quản lý học sinh theo từng khoa trong trường</p>
       </div>
 
       {/* Thống kê tổng quan */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-        <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-lg p-6 text-white shadow-lg">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-blue-100 text-sm">Tổng số khoa/viện</p>
-              <p className="text-2xl font-bold">{departments.length}</p>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
+        <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div className="flex items-center">
+            <div className="p-3 bg-blue-100 rounded-full flex-shrink-0">
+              <div className="w-6 h-6 bg-blue-600 rounded"></div>
             </div>
-            <div className="bg-white bg-opacity-25 rounded-lg p-3">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
+            <div className="ml-4 min-w-0">
+              <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider">Tổng số khoa/viện</h3>
+              <p className="text-2xl font-bold text-blue-600">{departments.length}</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-green-600 to-green-700 rounded-lg p-6 text-white shadow-lg">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-green-100 text-sm">Tổng học sinh</p>
-              <p className="text-2xl font-bold">{allStudents.length}</p>
+        <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div className="flex items-center">
+            <div className="p-3 bg-green-100 rounded-full flex-shrink-0">
+              <div className="w-6 h-6 bg-green-600 rounded"></div>
             </div>
-            <div className="bg-white bg-opacity-25 rounded-lg p-3">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z" />
-              </svg>
+            <div className="ml-4 min-w-0">
+              <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider">Tổng học sinh</h3>
+              <p className="text-2xl font-bold text-green-600">{allStudents.length}</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-yellow-600 to-yellow-700 rounded-lg p-6 text-white shadow-lg">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-yellow-100 text-sm">Đã làm bài</p>
-              <p className="text-2xl font-bold">{allStudents.filter(s => s.completed).length}</p>
+        <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div className="flex items-center">
+            <div className="p-3 bg-yellow-100 rounded-full flex-shrink-0">
+              <div className="w-6 h-6 bg-yellow-600 rounded"></div>
             </div>
-            <div className="bg-white bg-opacity-25 rounded-lg p-3">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+            <div className="ml-4 min-w-0">
+              <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider">Đã làm bài</h3>
+              <p className="text-2xl font-bold text-yellow-600">{allStudents.filter(s => s.completed).length}</p>
             </div>
           </div>
         </div>
 
-        <div className="bg-gradient-to-r from-purple-600 to-purple-700 rounded-lg p-6 text-white shadow-lg">
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="text-purple-100 text-sm">Điểm trung bình</p>
-              <p className="text-2xl font-bold">
+        <div className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div className="flex items-center">
+            <div className="p-3 bg-purple-100 rounded-full flex-shrink-0">
+              <div className="w-6 h-6 bg-purple-600 rounded"></div>
+            </div>
+            <div className="ml-4 min-w-0">
+              <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider">Điểm trung bình</h3>
+              <p className="text-2xl font-bold text-purple-600">
                 {allStudents.filter(s => s.score !== null).length > 0 
                   ? Math.round(allStudents.filter(s => s.score !== null).reduce((sum, s) => sum + (s.score || 0), 0) / allStudents.filter(s => s.score !== null).length)
                   : '--'
                 }
               </p>
             </div>
-            <div className="bg-white bg-opacity-25 rounded-lg p-3">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-              </svg>
-            </div>
           </div>
         </div>
       </div>
 
-      {/* Grid 11 khoa/viện - responsive */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
-        {departments.map((dept) => (
-          <div
-            key={dept.id}
-            onClick={() => setSelectedDepartment(dept.id)}
-            className={`
-              relative cursor-pointer rounded-xl p-6 transition-all duration-300 hover:scale-105 hover:shadow-lg
-              ${selectedDepartment === dept.id ? 'ring-4 ring-blue-500 shadow-lg' : 'hover:shadow-md'}
-              ${dept.color} text-gray-800
-            `}
-          >
-            <div className="flex items-center justify-between">
-              <div>
-                <h3 className="text-lg font-semibold mb-1">{dept.name}</h3>
-                <p className="text-sm opacity-90 mb-2">{dept.code}</p>
-                <div className="flex items-center text-sm">
-                  <span>{dept.students} học sinh</span>
+      {/* Grid khoa/viện - improved design */}
+      <div className="bg-white rounded-lg shadow-md p-6">
+        <h2 className="text-xl font-bold text-gray-800 mb-6">Danh sách Khoa/Viện</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+          {departments.map((dept) => (
+            <div
+              key={dept.id}
+              onClick={() => setSelectedDepartment(dept.id)}
+              className={`
+                relative cursor-pointer rounded-lg p-4 border-2 transition-all duration-200 hover:shadow-md
+                ${selectedDepartment === dept.id 
+                  ? 'border-blue-500 bg-blue-50 shadow-md' 
+                  : 'border-gray-200 hover:border-blue-300 bg-white hover:bg-blue-25'
+                }
+              `}
+            >
+              <div className="flex items-center justify-between">
+                <div className="flex-1">
+                  <h3 className={`text-sm font-semibold mb-1 ${
+                    selectedDepartment === dept.id ? 'text-blue-700' : 'text-gray-800'
+                  }`}>
+                    {dept.name}
+                  </h3>
+                  <p className={`text-xs mb-2 ${
+                    selectedDepartment === dept.id ? 'text-blue-600' : 'text-gray-500'
+                  }`}>
+                    {dept.code}
+                  </p>
+                  <div className={`text-xs ${
+                    selectedDepartment === dept.id ? 'text-blue-600' : 'text-gray-600'
+                  }`}>
+                    {dept.students} học sinh
+                  </div>
+                </div>
+                <div className={`
+                  w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0
+                  ${selectedDepartment === dept.id 
+                    ? 'bg-blue-100' 
+                    : 'bg-gray-100'
+                  }
+                `}>
+                  <div className={`w-4 h-4 rounded ${
+                    selectedDepartment === dept.id ? 'bg-blue-500' : 'bg-gray-400'
+                  }`}></div>
                 </div>
               </div>
-              <div className="text-right">
-                <div className="w-12 h-12 bg-white bg-opacity-60 rounded-lg flex items-center justify-center mb-2">
-                  <div className="w-6 h-6 bg-gray-600 rounded"></div>
+              
+              {selectedDepartment === dept.id && (
+                <div className="absolute top-2 right-2">
+                  <div className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center">
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
-            
-            {selectedDepartment === dept.id && (
-              <div className="absolute top-2 right-2">
-                <div className="w-4 h-4 bg-white rounded-full flex items-center justify-center">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       {/* Danh sách học sinh khi chọn khoa */}
       {selectedDepartment && (
-        <div className="bg-white rounded-lg shadow-sm border">
+        <div className="bg-white rounded-lg shadow-md">
           <div className="border-b border-gray-200 p-6">
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-xl font-semibold text-gray-900">
+              <h2 className="text-xl font-bold text-gray-800">
                 Học sinh {selectedDept?.name}
               </h2>
               <div className="text-sm text-gray-500">
@@ -314,7 +326,7 @@ export default function QuanLyKhoa() {
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
                 placeholder="Tìm kiếm theo tên hoặc mã số học sinh..."
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
               />
             </div>
           </div>
@@ -343,7 +355,7 @@ export default function QuanLyKhoa() {
               </thead>
               <tbody className="bg-white divide-y divide-gray-200">
                 {filteredStudents.map((student) => (
-                  <tr key={student.id} className="hover:bg-gray-50">
+                  <tr key={student.id} className="hover:bg-gray-50 transition-colors">
                     <td className="px-6 py-4 whitespace-nowrap">
                       <div className="flex items-center">
                         <div className="flex-shrink-0 h-10 w-10">
