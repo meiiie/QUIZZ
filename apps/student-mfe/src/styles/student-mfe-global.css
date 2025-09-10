@@ -1,0 +1,214 @@
+/**
+ * Student MFE Global Styles
+ * 
+ * Reset và base styles cho Student MFE
+ * Đảm bảo consistency khi chạy standalone hoặc tích hợp với host
+ */
+
+/* CSS Reset cho Student MFE */
+.student-mfe-container,
+.student-mfe-container *,
+.student-mfe-container *::before,
+.student-mfe-container *::after {
+  box-sizing: border-box;
+}
+
+.student-mfe-container {
+  /* Reset margins và padding */
+  margin: 0;
+  padding: 0;
+  
+  /* Font family */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  /* Text rendering */
+  text-rendering: optimizeLegibility;
+  
+  /* Prevent text size adjust */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  
+  /* Smooth scrolling */
+  scroll-behavior: smooth;
+  
+  /* Isolation để tránh conflicts */
+  isolation: isolate;
+  contain: layout style;
+}
+
+/* Reset cho các elements bên trong */
+.student-mfe-container h1,
+.student-mfe-container h2,
+.student-mfe-container h3,
+.student-mfe-container h4,
+.student-mfe-container h5,
+.student-mfe-container h6 {
+  margin: 0;
+  font-weight: inherit;
+  font-size: inherit;
+}
+
+.student-mfe-container p {
+  margin: 0;
+}
+
+.student-mfe-container ul,
+.student-mfe-container ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.student-mfe-container button {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: none;
+}
+
+.student-mfe-container a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.student-mfe-container img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Focus styles */
+.student-mfe-container *:focus {
+  outline: 2px solid #2563eb;
+  outline-offset: 2px;
+}
+
+.student-mfe-container *:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Selection styles */
+.student-mfe-container ::selection {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+/* Scrollbar styles */
+.student-mfe-container ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.student-mfe-container ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.student-mfe-container ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.student-mfe-container ::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animation keyframes */
+@keyframes student-mfe-fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes student-mfe-slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes student-mfe-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Utility classes */
+.student-mfe-fade-in {
+  animation: student-mfe-fadeIn 0.3s ease-out;
+}
+
+.student-mfe-slide-in {
+  animation: student-mfe-slideIn 0.3s ease-out;
+}
+
+.student-mfe-pulse {
+  animation: student-mfe-pulse 2s infinite;
+}
+
+/* Responsive utilities */
+@media (max-width: 768px) {
+  .student-mfe-container {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-mfe-container {
+    font-size: 13px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .student-mfe-container {
+    color-scheme: dark;
+  }
+  
+  .student-mfe-container ::selection {
+    background-color: #1e40af;
+    color: #dbeafe;
+  }
+  
+  .student-mfe-container ::-webkit-scrollbar-track {
+    background: #374151;
+  }
+  
+  .student-mfe-container ::-webkit-scrollbar-thumb {
+    background: #6b7280;
+  }
+  
+  .student-mfe-container ::-webkit-scrollbar-thumb:hover {
+    background: #9ca3af;
+  }
+}
+
+/* Print styles */
+@media print {
+  .student-mfe-container {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .student-mfe-container * {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}

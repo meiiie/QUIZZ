@@ -1,0 +1,4 @@
+#  khai bao cau truc monorepo cho pnpm 
+packages:
+  - 'apps/*'
+  - 'packages/*'

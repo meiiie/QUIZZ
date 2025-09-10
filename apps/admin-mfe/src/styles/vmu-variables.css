@@ -1,0 +1,73 @@
+/* VMU CSS Variables - Vietnam Maritime University */
+:root {
+  /* Primary Colors */
+  --vmu-primary: #003e80;      /* Xanh dương đậm - biển cả */
+  --vmu-secondary: #00a0e3;    /* Xanh nước biển nhạt */
+  --vmu-accent: #ffc20e;       /* Vàng kim - điểm nhấn */
+  
+  /* Neutral Colors */
+  --vmu-white: #ffffff;        /* Nền trắng */
+  --vmu-gray: #f5f5f5;        /* Xám nhạt - chuyển tiếp */
+  --vmu-text: #333333;         /* Văn bản chính */
+  --vmu-text-light: #666666;   /* Văn bản phụ */
+  
+  /* Utility Colors */
+  --vmu-shadow: rgba(0, 62, 128, 0.1); /* Bóng đổ */
+  --vmu-overlay: rgba(0, 62, 128, 0.8); /* Overlay */
+  
+  /* Gradients */
+  --vmu-gradient: linear-gradient(135deg, var(--vmu-primary) 0%, var(--vmu-secondary) 100%);
+  --vmu-gradient-accent: linear-gradient(135deg, var(--vmu-accent) 0%, #ffd700 100%);
+  
+  /* Status Colors */
+  --vmu-success: #22c55e;
+  --vmu-warning: #f59e0b;
+  --vmu-error: #ef4444;
+  --vmu-info: #3b82f6;
+  
+  /* Spacing */
+  --vmu-spacing-xs: 0.25rem;   /* 4px */
+  --vmu-spacing-sm: 0.5rem;    /* 8px */
+  --vmu-spacing-md: 1rem;      /* 16px */
+  --vmu-spacing-lg: 1.5rem;    /* 24px */
+  --vmu-spacing-xl: 2rem;      /* 32px */
+  --vmu-spacing-2xl: 3rem;     /* 48px */
+  
+  /* Border Radius */
+  --vmu-radius-sm: 0.25rem;    /* 4px */
+  --vmu-radius-md: 0.5rem;     /* 8px */
+  --vmu-radius-lg: 0.75rem;    /* 12px */
+  --vmu-radius-xl: 1rem;       /* 16px */
+  --vmu-radius-full: 9999px;
+  
+  /* Typography */
+  --vmu-font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --vmu-font-size-xs: 0.75rem;   /* 12px */
+  --vmu-font-size-sm: 0.875rem;  /* 14px */
+  --vmu-font-size-base: 1rem;    /* 16px */
+  --vmu-font-size-lg: 1.125rem;  /* 18px */
+  --vmu-font-size-xl: 1.25rem;   /* 20px */
+  --vmu-font-size-2xl: 1.5rem;   /* 24px */
+  --vmu-font-size-3xl: 1.875rem; /* 30px */
+  --vmu-font-size-4xl: 2.25rem;  /* 36px */
+  
+  /* Font Weights */
+  --vmu-font-weight-light: 300;
+  --vmu-font-weight-normal: 400;
+  --vmu-font-weight-medium: 500;
+  --vmu-font-weight-semibold: 600;
+  --vmu-font-weight-bold: 700;
+  --vmu-font-weight-extrabold: 800;
+  
+  /* Shadows */
+  --vmu-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --vmu-shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --vmu-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --vmu-shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  --vmu-shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  /* Transitions */
+  --vmu-transition-fast: 0.15s ease;
+  --vmu-transition-normal: 0.2s ease;
+  --vmu-transition-slow: 0.3s ease;
+}
